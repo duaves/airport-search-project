@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AirportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/airports/searchByCode', [AirportController::class, 'searchByCode']);
+Route::get('/airports/searchByCity', [AirportController::class, 'searchByCity']);
+Route::get('/airports/searchByAirport', [AirportController::class, 'searchByAirport']);
+
+
+
